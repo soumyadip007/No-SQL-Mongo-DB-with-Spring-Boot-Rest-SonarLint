@@ -7,17 +7,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@Data
 @Getter
 @Setter
-@Data
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Nest {
 
 
-	private String name;
+	private  String name;
 	
 	private String pos;
 
@@ -26,6 +25,27 @@ public class Nest {
 		this.name = name;
 		this.pos = pos;
 	}
+
+	public Nest() {
+		super();
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPos() {
+		return pos;
+	}
+
+	public void setPos(String pos) {
+		this.pos = pos;
+	}
+
 
 	
 	
