@@ -24,4 +24,24 @@ public class Controller {
         obj.forEach(System.out::println);
         return obj;
     }
+    
+    
+    @GetMapping("/update")
+    public List<User> getUpdated() {
+    	
+    	List<User> obj=userRepository.findAll();
+    	System.out.println("Before");
+        obj.forEach(System.out::println);
+        
+        
+    	obj.get(0).map.put("Key","Value");
+    	obj.get(0).map.put("Key-1","Value-1");
+    	userRepository.save(obj.get(0));
+    	
+    	obj=userRepository.findAll();
+    	System.out.println("After");
+        obj.forEach(System.out::println);
+        
+        return obj;
+    }
 }
