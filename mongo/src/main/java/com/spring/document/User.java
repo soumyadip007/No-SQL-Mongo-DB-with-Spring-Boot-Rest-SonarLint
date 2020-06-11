@@ -45,6 +45,14 @@ public class User {
 		this.teamname = teamname;
 		this.list = list;
 	}
+	
+
+	public User(Integer id, String name, String teamname) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.teamname = teamname;
+	}
 
 	@Override
 	public String toString() {
