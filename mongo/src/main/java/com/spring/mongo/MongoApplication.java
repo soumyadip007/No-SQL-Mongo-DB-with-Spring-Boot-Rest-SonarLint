@@ -8,8 +8,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @EnableAsync
-@ComponentScan({"com.spring.mongo.*"})
-@EntityScan("com.spring.mongo.*")
+@ComponentScan({"com.spring.*"})
+@EntityScan("com.spring.*")
 public class MongoApplication {
 
 	public static void main(String[] args) {
