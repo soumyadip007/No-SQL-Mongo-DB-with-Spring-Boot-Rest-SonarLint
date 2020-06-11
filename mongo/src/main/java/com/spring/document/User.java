@@ -54,6 +54,23 @@ public class User {
 		this.teamname = teamname;
 	}
 
+	
+	
+	public User() {
+		super();
+	}
+
+
+	public List<Nest> getList() {
+		return list;
+	}
+
+
+	public void setList(List<Nest> list) {
+		this.list = list;
+	}
+
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", teamname=" + teamname + ", list=" + list + ", map=" + map + "]";
