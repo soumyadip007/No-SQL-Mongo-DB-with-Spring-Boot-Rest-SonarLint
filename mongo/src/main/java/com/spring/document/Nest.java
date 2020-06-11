@@ -46,6 +46,11 @@ public class Nest {
 		this.pos = pos;
 	}
 
+	@Override
+	public String toString() {
+		return "Nest [name=" + name + ", pos=" + pos + "]";
+	}
+
 
 	
 	
