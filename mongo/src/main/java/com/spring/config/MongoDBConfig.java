@@ -28,7 +28,7 @@ public class MongoDBConfig {
 	
 	
 	User user1=new User(1,"Soumya","Dip",o);
-	User user2=new User(2,"Soumya","Dip Chowdhury",o);
+	User user2=new User(2,"Soumya","Dip Chowdhury");
 	System.out.println(user1);
 	System.out.println(user1);
 	return string->{
