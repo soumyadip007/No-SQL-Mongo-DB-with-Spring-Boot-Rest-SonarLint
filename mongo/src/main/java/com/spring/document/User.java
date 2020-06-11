@@ -1,6 +1,7 @@
 package com.spring.document;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -33,8 +34,10 @@ public class User {
 	
 	public String teamname;
 
-	public List<Nest> list=new ArrayList<Nest>();
+	public List<Nest> list=new ArrayList<>();
 
+	public HashMap<String, String> map=new HashMap<>();
+	
 	public User(Integer id, String name, String teamname, List<Nest> list) {
 		super();
 		this.id = id;
@@ -42,24 +45,29 @@ public class User {
 		this.teamname = teamname;
 		this.list = list;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", teamname=" + teamname + ", list=" + list + ", map=" + map + "]";
+	}
+
 	
 	
-	
-	 @Override
-	  public String toString() {
-	      ObjectMapper mapper = new ObjectMapper();
-	      
-	   String jsonString = "";
-	   
-	   try {
-	      mapper.enable(SerializationFeature.INDENT_OUTPUT);
-	      jsonString = mapper.writeValueAsString(this);
-	    } catch (JsonProcessingException e) {
-	      e.printStackTrace();
-	    }
-	    
-	      return jsonString;
-	    }
+//	 @Override
+//	  public String toString() {
+//	      ObjectMapper mapper = new ObjectMapper();
+//	      
+//	   String jsonString = "";
+//	   
+//	   try {
+//	      mapper.enable(SerializationFeature.INDENT_OUTPUT);
+//	      jsonString = mapper.writeValueAsString(this);
+//	    } catch (JsonProcessingException e) {
+//	      e.printStackTrace();
+//	    }
+//	    
+//	      return jsonString;
+//	    }
 	
 	
 }
