@@ -1,9 +1,25 @@
 package com.spring.document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor	
+@Document(collection = "User")
 public class User {
 
 	@Id
@@ -13,39 +29,16 @@ public class User {
 	
 	public String teamname;
 
-	public Integer getId() {
-		return id;
-	}
+	public List<Nest> list=new ArrayList<Nest>();
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getTeamname() {
-		return teamname;
-	}
-
-	public void setTeamname(String teamname) {
-		this.teamname = teamname;
-	}
-
-	public User(Integer id, String name, String teamname) {
+	public User(Integer id, String name, String teamname, List<Nest> list) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.teamname = teamname;
+		this.list = list;
 	}
-
-	public User() {
-		super();
-	}
+	
+	
 	
 }
