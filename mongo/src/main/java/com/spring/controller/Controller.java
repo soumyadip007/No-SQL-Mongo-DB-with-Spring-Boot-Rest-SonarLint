@@ -3,6 +3,7 @@ package com.spring.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,8 @@ import com.spring.document.Nest;
 import com.spring.document.User;
 import com.spring.repository.UserRepository;
 
+import ch.qos.logback.classic.Logger;
+
 @RestController
 @RequestMapping("/rest/users")
 public class Controller {
@@ -19,11 +22,14 @@ public class Controller {
 	@Autowired
     private UserRepository userRepository;
 
+
+
+	private static final Logger log=(Logger) LoggerFactory.getLogger(Controller.class);
+	
     @GetMapping("/all")
     public List<User> getAll() {
     	List<User> obj=userRepository.findAll();
-          
-        obj.forEach(System.out::println);
+    	log.info("{}", obj);
         return obj;
     }
     
@@ -32,8 +38,8 @@ public class Controller {
     public List<User> getUpdated() {
     	
     	List<User> obj=userRepository.findAll();
-    	System.out.println("Before");
-        obj.forEach(System.out::println);
+    	log.info("Before");
+    	log.info("{}", obj);
         
         
     	obj.get(0).map.put("Key","Value");
@@ -41,9 +47,9 @@ public class Controller {
     	userRepository.save(obj.get(0));
     	
     	obj=userRepository.findAll();
-    	System.out.println("After");
-        obj.forEach(System.out::println);
-        
+    	log.info("After");
+    	log.info("{}",obj);
+         
         return obj;
     }
     
@@ -52,8 +58,8 @@ public class Controller {
     public List<User> getUpdated2() {
     	
     	List<User> obj=userRepository.findAll();
-    	System.out.println("Before");
-        obj.forEach(System.out::println);
+    	log.info("Before");
+    	log.info("{}", obj);
        
         
         Nest obj2=new Nest("Updated Java","Top");
@@ -67,9 +73,9 @@ public class Controller {
     	userRepository.save(obj.get(1));
     	
     	obj=userRepository.findAll();
-    	System.out.println("After");
-        obj.forEach(System.out::println);
-        
+    	log.info("After");
+    	log.info("{}", obj);
+    	
         return obj;
     }
 }
