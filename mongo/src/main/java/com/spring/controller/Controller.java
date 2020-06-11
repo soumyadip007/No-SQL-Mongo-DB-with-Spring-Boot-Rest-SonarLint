@@ -19,6 +19,9 @@ public class Controller {
 
     @GetMapping("/all")
     public List<User> getAll() {
-        return userRepository.findAll();
+    	List<User> obj=userRepository.findAll();
+          
+        obj.forEach(System.out::println);
+        return obj;
     }
 }
