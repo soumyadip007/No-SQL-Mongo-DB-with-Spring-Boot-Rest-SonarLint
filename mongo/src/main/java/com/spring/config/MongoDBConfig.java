@@ -26,9 +26,11 @@ public class MongoDBConfig {
 	o.add(obj);
 	o.add(obj1);
 	
+	
 	User user1=new User(1,"Soumya","Dip",o);
 	User user2=new User(2,"Soumya","Dip Chowdhury",o);
-		
+	System.out.println(user1);
+	System.out.println(user1);
 	return string->{
 		userRepository.save(user1);
 		userRepository.save(user2);
